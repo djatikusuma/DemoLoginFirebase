@@ -10,10 +10,31 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var identityTextField: UITextField!
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
+    @IBOutlet weak var messageErrorLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setUpElement()
+    }
+    
+    func setUpElement() {
+        messageErrorLabel.alpha = 0
+        
+        Utilities.styleTextField(identityTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleFilledButton(loginButton)
+        
     }
     
 
