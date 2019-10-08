@@ -24,10 +24,26 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var messageErrorLabel: UILabel!
     
+    @IBOutlet weak var signUpButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setUpElement()
+    }
+    
+    func setUpElement() {
+        messageErrorLabel.alpha = 0
+        
+        Utilities.styleTextField(namaLengkapTextField)
+        Utilities.styleTextField(usernameTextField)
+        Utilities.styleTextField(passwordTextField)
+        Utilities.styleTextField(confPasswordTextField)
+        Utilities.styleTextField(phoneTextField)
+        Utilities.styleTextField(emailTextField)
+        Utilities.styleFilledButton(signUpButton)
     }
     
 

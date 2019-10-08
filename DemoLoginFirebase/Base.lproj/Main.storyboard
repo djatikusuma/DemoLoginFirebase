@@ -298,6 +298,7 @@
                         <outlet property="namaLengkapTextField" destination="j5N-ga-oJL" id="pFc-HK-JOK"/>
                         <outlet property="passwordTextField" destination="9Rh-Ll-En5" id="dL6-Oc-xM6"/>
                         <outlet property="phoneTextField" destination="6te-CN-Ymh" id="4Da-5r-bpe"/>
+                        <outlet property="signUpButton" destination="d6Y-NR-jxH" id="hGZ-IF-47P"/>
                         <outlet property="usernameTextField" destination="NGp-M4-5qQ" id="Q7J-Ek-GIc"/>
                     </connections>
                 </viewController>
