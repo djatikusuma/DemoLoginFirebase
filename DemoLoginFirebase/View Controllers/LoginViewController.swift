@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -47,4 +48,31 @@ class LoginViewController: UIViewController {
     }
     */
 
+    @IBAction func loginTapped(_ sender: Any) {
+        // Validate
+        
+        // data clean
+        let identity = identityTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        // Signin
+        Auth.auth().signIn(withEmail: identity, password: password) { (res, err) in
+            if err != nil {
+                self.showError(err!.localizedDescription)
+            }else{
+                self.redirectToHome()
+            }
+        }
+    }
+    
+    func redirectToHome() {
+        let homeViewController = storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
+        view.window?.rootViewController = homeViewController
+        view.window?.makeKeyAndVisible()
+    }
+    
+    func showError(_ message: String) {
+        messageErrorLabel.alpha = 1
+        messageErrorLabel.text = message
+    }
 }
